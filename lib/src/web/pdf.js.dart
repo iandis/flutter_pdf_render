@@ -51,7 +51,7 @@ extension type PdfjsPage._(JSObject _) implements JSObject {
   /// `viewport` for [PdfjsViewport] and `transform` for
   external PdfjsRender render(PdfjsRenderContext params);
   external int get pageNumber;
-  external List<double> get view;
+  external JSArray<JSNumber> get view;
 }
 
 extension type PdfjsViewportParams._(JSObject _) implements JSObject {
@@ -77,8 +77,8 @@ extension type PdfjsViewportParams._(JSObject _) implements JSObject {
 
 @JS('PageViewport')
 extension type PdfjsViewport._(JSObject _) implements JSObject {
-  external List<double> get viewBox;
-  external set viewBox(List<double> viewBox);
+  external JSArray<JSNumber> get viewBox;
+  external set viewBox(JSArray<JSNumber> viewBox);
 
   external double get scale;
   external set scale(double scale);
@@ -98,8 +98,8 @@ extension type PdfjsViewport._(JSObject _) implements JSObject {
   external double get height;
   external set height(double h);
 
-  external List<double>? get transform;
-  external set transform(List<double>? m);
+  external JSArray<JSNumber>? get transform;
+  external set transform(JSArray<JSNumber>? m);
 }
 
 extension type PdfjsRenderContext._(JSObject _) implements JSObject {
@@ -108,10 +108,10 @@ extension type PdfjsRenderContext._(JSObject _) implements JSObject {
     required PdfjsViewport viewport,
     String intent = 'display',
     bool renderInteractiveForms = false,
-    List<double>? transform,
-    dynamic imageLayer,
-    dynamic canvasFactory,
-    dynamic background,
+    JSArray<JSNumber>? transform,
+    JSAny imageLayer,
+    JSAny canvasFactory,
+    JSAny background,
   });
 
   external CanvasRenderingContext2D get canvasContext;
@@ -124,14 +124,14 @@ extension type PdfjsRenderContext._(JSObject _) implements JSObject {
   external set intent(String intent);
   external bool get renderInteractiveForms;
   external set renderInteractiveForms(bool renderInteractiveForms);
-  external List<int>? get transform;
-  external set transform(List<int>? transform);
-  external dynamic get imageLayer;
-  external set imageLayer(dynamic imageLayer);
-  external dynamic get canvasFactory;
-  external set canvasFactory(dynamic canvasFactory);
-  external dynamic get background;
-  external set background(dynamic background);
+  external JSArray<JSNumber>? get transform;
+  external set transform(JSArray<JSNumber>? transform);
+  external JSAny get imageLayer;
+  external set imageLayer(JSAny imageLayer);
+  external JSAny get canvasFactory;
+  external set canvasFactory(JSAny canvasFactory);
+  external JSAny get background;
+  external set background(JSAny background);
 }
 
 extension type PdfjsRender._(JSObject _) implements JSObject {
